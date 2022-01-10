@@ -1,2 +1,2 @@
-# Portofolio Michael Weij 18095593
-Portofolio for the minor applied data science
+# Portfolio Michael Weij 18095593
+Portfolio for the minor applied data science
