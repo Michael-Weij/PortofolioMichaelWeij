@@ -41,3 +41,46 @@
 [Cleaning Data in Python](https://www.datacamp.com/statement-of-accomplishment/course/8c5f0e48ef1c8c064b6e7d8e98f520453bcef507) 
 
 [Time series Analysis in Python](https://www.datacamp.com/statement-of-accomplishment/course/040e699f0facaeed1e061d7d916734d7ac7e4b79) 
+
+
+## Reflection and evaluation
+
+### Reflection on own contribution to the project
+400 words STARR method
+
+
+### Reflection on own learning objectives.
+400 words STARR method
+ 
+
+### Evaluation on the group project as a whole.
+400 words STARR method
+ 
+ 
+## Research Project
+Pipeline:
+Gap creation
+Data saving
+Imputing KNMI Data
+HotDeck
+Imputing with Hotdeck
+Implemented SoftImpute
+Implemented LOCF 
+
+## Predective Analytics
+Havent done alot in this field 
+
+## Domain knowledge
+Read Literature
+
+
+## Data preprocessing
+Discussed with albert about how to sort the houses and we ended up sorting it by standard dev
+
+## Communication
+Latex Format
+Learning Lab
+
+
+
+
