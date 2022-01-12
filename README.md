@@ -7,7 +7,7 @@
 - [Obligatory Criteria](#obligatory-criteria)
   - [Datacamp](#datacamp)
   - [Reflection and evaluation](#Reflection-and-evaluation)
-- [Research Project](Research-Project)
+- [Research Project](research-project)
 # Obligatory Criteria
 
 
