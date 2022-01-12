@@ -107,9 +107,20 @@ For the impution method Hotdeck we needed to find suitable donors. We where usin
 ### Paper
 When my other two group members started writing the paper. I was still trying to get resuls from a few imputation methods. After i was done getting results i started to make a LaTex template in Overleaf. In the end i converted the whole paper to LaTex and formatted the whole paper so it could be accepted for the CLIMA 2022 Conference. In the end i didn't write alot in the paper i just ended up reviewing and making corrections to the pieces other people wrote.
 
-#### LaTeX Code
+#### LaTeX 
+Here underneath is the LaTeX code used for the template with the Bibliography. In the same folder are the files for the images andfiles for the Cambria, Cambria Bold and Cambria Italic font.
 
-### Learning Lab
+[LaTeX Code](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/paper/LaTeX%20Code.tex)
+
+[Bibliography](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/paper/bibliography.bib)
+
+### Presentations
+
+#### Internal Presentations
+
+#### External Presentations
+
+#### Learning Lab
 At first i was gonna do the learning lab with ALbert about Hotdeck but then we decided it was not that interesting for the other groups. So we decidede to delay the learning lab and do it about Hyper Parmeter Tuning because it would be more interesting for the other groups. 
 
 (link to notebook)\
