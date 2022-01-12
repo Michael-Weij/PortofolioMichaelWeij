@@ -4,7 +4,7 @@
 
 
 ## Index
-
+[Datacamp](## Datacamp)
 
 ## Datacamp
 
@@ -94,6 +94,12 @@ Havent done alot in this field
 
 ## Domain knowledge
 Read Literature
+[Recurrent Neural Networks for Multivariate Time Series with Missing Values](https://www.nature.com/articles/s41598-018-24271-9)
+
+[Flexible Imputation of missing Data](https://stefvanbuuren.name/fimd//)\
+read the first part of the book: Part I: The basics
+
+[Imputation of Clinical covariates in Time Series](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/article/Imputation%20of%20clinical%20covariates%20in%20time%20series.pdf)
 
 
 ## Data preprocessing
@@ -101,6 +107,7 @@ In the beginning albert and i started working with the Factory Zero house data a
 
 For the impution method Hotdeck we needed to find suitable donors. We where using patern matching to look what was the best donor and impute it but if we did this over the 100+ houses it would never finish before the end of the year so we had to preselect a few donors before the patern matching. I wrote a few scoreboards to look which donor to use for  alklimaHeatpump op_mode, smartmeter power and temperature. For the ratio and interval data we used the average that came closest to the data what was going to be imputed. Because op_mode was nominal data we calculated the percentage of how many times each mode was active and looked for similar percentages in the other houses to select the donor.
 
+[Scoreboard used for HotDeck](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/scoreboard.ipynb)
 
 ## Communication
 
@@ -108,7 +115,7 @@ For the impution method Hotdeck we needed to find suitable donors. We where usin
 When my other two group members started writing the paper. I was still trying to get resuls from a few imputation methods. After i was done getting results i started to make a LaTex template in Overleaf. In the end i converted the whole paper to LaTex and formatted the whole paper so it could be accepted for the CLIMA 2022 Conference. In the end i didn't write alot in the paper i just ended up reviewing and making corrections to the pieces other people wrote.
 
 #### LaTeX 
-Here underneath is the LaTeX code used for the template with the Bibliography. In the same folder are the files for the images andfiles for the Cambria, Cambria Bold and Cambria Italic font.
+Here underneath is the LaTeX code used for the template with the Bibliography. In the same folder are the files for the images and files for the Cambria, Cambria Bold and Cambria Italic font used in the template.
 
 [LaTeX Code](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/paper/LaTeX%20Code.tex)
 
@@ -121,10 +128,11 @@ Here underneath is the LaTeX code used for the template with the Bibliography. I
 #### External Presentations
 
 #### Learning Lab
-At first i was gonna do the learning lab with ALbert about Hotdeck but then we decided it was not that interesting for the other groups. So we decidede to delay the learning lab and do it about Hyper Parmeter Tuning because it would be more interesting for the other groups. 
+At first i was gonna do the learning lab with Albert about Hotdeck but then we decided it was not that interesting for the other groups. So we decided to delay the learning lab and do it about Hyper Parmeter Tuning because it would be more interesting for the other groups. 
 
-(link to notebook)\
-(link to presentatiom)
+
+[Learning Lab NoteBook](https://github.com/thuas-imp-2021/Learning-Lab/blob/main/genetic-algorithm.ipynb)\
+[Learning Lab Presentation](https://github.com/thuas-imp-2021/Learning-Lab/blob/main/presentation.pdf)
 
 
 
