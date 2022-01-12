@@ -7,10 +7,13 @@
 - [Obligatory Criteria](#obligatory-criteria)
   - [Datacamp](#datacamp)
   - [Reflection and evaluation](#Reflection-and-evaluation)
-    -[Reflection on own contribution to the project](#Reflection-on-own-contribution-to-the-project)
 - [Research Project](#research-project)
 - [Predective Analytics](#Predective-Analytics)
-- 
+- [Domain knowledge](#Domain-knowledge)
+- [Data preprocessing](#Data-preprocessing)
+- [Communication](#Communication)
+  - [Paper](#Paper)
+  - [Presentations](#Presentations)
 # Obligatory Criteria
 
 
@@ -122,7 +125,7 @@ For the impution method Hotdeck we needed to find suitable donors. We where usin
 ## Paper
 When my other two group members started writing the paper. I was still trying to get resuls from a few imputation methods. After i was done getting results i started to make a LaTex template in Overleaf. In the end i converted the whole paper to LaTex and formatted the whole paper so it could be accepted for the CLIMA 2022 Conference. In the end i didn't write alot in the paper i just ended up reviewing and making corrections to the pieces other people wrote.
 
-## LaTeX 
+### LaTeX 
 Here underneath is the LaTeX code used for the template with the Bibliography. In the same folder are the files for the images and files for the Cambria, Cambria Bold and Cambria Italic font used in the template.
 
 [LaTeX Code](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/paper/LaTeX%20Code.tex)
