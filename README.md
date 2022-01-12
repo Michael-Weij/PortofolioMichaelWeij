@@ -4,7 +4,10 @@
 
 
 ## Index
-[Datacamp](##Datacamp)
+- [Obligatory Criteria](#obligatory-criteria)
+  - [Datacamp](#datacamp)
+# Obligatory Criteria
+
 
 ## Datacamp
 
