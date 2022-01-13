@@ -8,12 +8,13 @@
   - [Datacamp](#datacamp)
   - [Reflection and evaluation](#Reflection-and-evaluation)
 - [Research Project](#research-project)
-- [Predective Analytics](#Predective-Analytics)
 - [Domain knowledge](#Domain-knowledge)
 - [Data preprocessing](#Data-preprocessing)
 - [Communication](#Communication)
   - [Paper](#Paper)
   - [Presentations](#Presentations)
+
+
 # Obligatory Criteria
 
 
@@ -61,7 +62,7 @@
 #### Situation
 
 #### Task
-
+My tasks changed throughout the minor
 #### Action
 
 #### Results
@@ -100,8 +101,6 @@ Imputing with Hotdeck
 Implemented SoftImpute
 Implemented LOCF 
 
-# Predective Analytics
-Havent done alot in this field 
 
 # Domain knowledge
 Read Literature
@@ -111,6 +110,8 @@ Read Literature
 read the first part of the book: Part I: The basics
 
 [Imputation of Clinical covariates in Time Series](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/article/Imputation%20of%20clinical%20covariates%20in%20time%20series.pdf)
+
+[Comparison of different Methods for Univariate Time Series Imputation in R](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/article/Comparison%20of%20different%20Methods%20for%20Univariate%20Time%20Series%20Imputation%20in%20R.pdf)
 
 
 # Data preprocessing
