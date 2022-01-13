@@ -23,7 +23,7 @@ hum2 = data['Relative atmospheric humidity']
 temp3 = data['Temperature']
 rad3 = data['Global Radiation']
 hum3 = data['Relative atmospheric humidity']
-"""
+
 small_temp_data , index = create_gaps(temp,4,[1,3],200)
 
 small_rad_data , index = create_gaps(rad,4,[1,3],200)
@@ -42,7 +42,7 @@ np.savetxt("med_temp_data.txt", med_temp_data, delimiter=",", fmt='%s')
 np.savetxt("med_rad_data.txt", med_rad_data, delimiter=",", fmt='%s')
 np.savetxt("med_hum_data.txt", med_hum_data, delimiter=",", fmt='%s')
 
-"""
+
 large_temp_data , index = create_gaps(temp3,4,[24,72],1200)
 
 large_rad_data , index = create_gaps(rad3,4,[24,72],1200)
