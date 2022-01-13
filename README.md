@@ -60,78 +60,97 @@
 
 
 ## Reflection and evaluation
-First of all some things i have worked on during the project 
+
 ### Reflection on own contribution to the project
 
-## Sorting the houses
+First of all some things i have worked on during the project 
+
+#### Sorting the houses
 In the beginning albert and i started working with the Factory Zero house data and looking for a method to decide which house was the most complete with the least amount of data missing. The method we came up with was calculating the standard deviation between the time of the next datapoint.We calculated this for every house and we found out that house 054 had the least amount of data missing and decided this was the house we are gonna create the gaps in and impute.
 
 Albert made the code to calculate the standard deviation between the time of the next datapoint and gave the following csv file\
 [House Scoreboard](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pythoncode/house_by_overall_std.csv)
 
-## Gap creation
+#### Gap creation
 The first gap creation program i wrote\
 [Gap creation](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pythoncode/gap.py)
 
 created gaps in the KNMI data so we could run some imputation tests in the beginning.\
 [creating gaps in KNMI data](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pythoncode/creating%20gaps.py)
 
-## Data saving
+#### Data saving
 I changed the evaluate code so that it was able to save the results it calculated.\
 [evaluate](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/evaluate.ipynb)\
 With the following code we were able to save the results to csv files and graphs where exported to images. Adriaan cleaned up the code in the end.\
 [Saving](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/saving.ipynb)
 
-## Hotdeck
-In the middle of the minor Albert and I started to work on the method HotDeck this was a patern matching algohritm that looked for a donor with the same trend as the data that was going to be imputed. We did alot of research on Hotdeck and finaly started on implenting Hotdeck to the pipleline. Albert did the coding for it because it was out of my league to code the algorythm that did the patern matching. But we discussed alot on how to improve it. 
+#### Hotdeck
+In the middle of the minor Albert and I started to work on the method HotDeck this was a patern matching algorithm that looked for a donor with the same trend as the data that was going to be imputed. We did alot of research on Hotdeck and finaly started on implenting Hotdeck to the pipleline. Albert did the coding for it because it was out of my league to code the algorithm that did the patern matching. But we discussed alot on how to improve it. 
 
 For the impution method Hotdeck we needed to find suitable donors. We where using patern matching to look what was the best donor and impute it but if we did this over the 100+ houses it would never finish before the end of the year so we had to preselect a few donors before the patern matching. I wrote a few scoreboards to look which donor to use for  alklimaHeatpump op_mode, smartmeter power and temperature. For the ratio and interval data we used the average that came closest to the data what was going to be imputed. Because op_mode was nominal data we calculated the percentage of how many times each mode was active and looked for similar percentages in the other houses to select the donor.
 
-## Imputing with Hotdeck
+#### Imputing with Hotdeck
 By using the scoreboard for the donors i tested alot of different houses amount of donors to see what works best and confirm if the donors we selected where actaully the best donors. Selecting donors that where supposed to be good and donors who where supossed to bad i tried to confirm that it works. This testing took quite some time because hotdeck was at this stage not as fast as it is now. This was because Albert was still trying to implement vectorisation to speed up the progress.
 
 [Code to see what donors to use for HotDeck](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/scoreboard.ipynb)
 
-## Implemented SoftImpute
+#### Implemented SoftImpute
 Tried a method called Softimpute from the libray Fancyimpute this method didnt seem to get great results so we dropped in the end for the paper.\
 [SoftImpute](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/softimpute.ipynb)
-## Implemented LOCF 
+
+#### Implemented LOCF 
 Last Obervation Carried Forward was a simple imputation method that uses either the data before the gap or behind the gap to fill it in. It gave quite good results on the smaller gaps but failed on bigger gaps.\
 [LOCF](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/fillna.ipynb)
 
+Now i will reflect on a situation using STARR:
 
 #### Situation
-
+To start testing some imputation methods we needed to create artificial gaps in the data.
 #### Task
-
+To write a simple program that could create different sizes of gaps in the data.
 #### Action
-
+I wrote a simple program that could make gaps in all kinds of data. It had 3 gap sizes it could make. 
 #### Results
-
+Because of this we could started to do some tests on the KNMI data to see if the imputation methods worked the correct way. In the end Adriaan build up on this code to create the last version we use for the pipeline. This version was more easier to configure to make differnt gap sizes.
 #### Reflection
+This task was the first thing i did for everyone else and soon after we were able to see some results of imputation methods. Which for me marked the real start of the project.  
+
 
 ### Reflection on own learning objectives.
+There where a few things i wanted to learn this minor. One of them was to be able to code better and get a better grasp of pandas and numpy. The other one was to learn about machine learning. I think the minor succeeded in both with those goals the datacamp courses helped me alot to learn more about both these libraries. Datacamp showed me alot of functions i didnt know about that came in handy when working in data. The lectures and the research i did gave alot of in depth knowledge about machine learning and i think i have now a good start in this field but there is still quite a lot to learn. 
+
+I wish i did more on predective analystics. I configured a few models but i dont think i truly optimized the hyperparmeters. But the minor taught me where to start and what to look out for. So in the future i can hopefully get the full grasp of it. In the end it was really informative minor and learned a lot.
+
+
 #### Situation
-
+Imputation needed to be done with hotdeck but suitable donors needed to be found.
 #### Task
-
+Find suitable donors for house 054 and impute with them.
 #### Action
-
+Made a few different scoreboards to see what houses come close to house 054 and then impute with the best and worst houses to see if this actually works.
 #### Results
-
+For the power column calculating the average and then see what houses come closest to the average of house 054 worked really well. The trends matched alot of the origanal trends of house 054 and with a low Variance Error confirmed that. 
 #### Reflection
- 
+I imputated alot of different houses to see what method for every column worked best went. I went throught alot of data  
+
 ### Evaluation on the group project as a whole.
+The beginning of the minor the group didnt work that great together we did things more in smaller groups then as a whole but this changed and we started to work more at school together. Evuantally we had a workroom where we always worked from monday till friday. This helped alot and made it so we were finnaly working as a team to get this project done. 
+
+Just before the end of the minor the lockdown happened which made everything harder again. But i am gratefull most of the minor we where able to have normal lessons and just have physical meetings for the most part. 
+
+Everybody was really nice and brought there own perspective to the table because we all had different backgrounds. Everybody was doing there part and always happy to help if someone was stuck on something.
+
 #### Situation
-
+Working together with Albert on Hotdeck
 #### Task
-
+We needed to create a algorithm that used data from similair houses to impute in the missing gap. This was done by patern matching the trend in other houses.
 #### Action
-
+Albert and i first read literature about hotdeck and how some donor selection worked. After that Albert started the coding part of it but we discussed alot of what the next steps where with hotdeck and what choices to make.
 #### Results
-
+The result was algorythm that with enough time could find the best trend that matched the missing data and then impute that part.
 #### Reflection
- 
+Working with Albert together on this imputer was a really good learning experience for me. Albert went for every update through the code and explained in detail how it worked to me. I learned a lot from this and i am grateful for this experience to see how a software engineer codes a program like this.
+
 # Research Project
 The project was about imputating missing data in building management systems. Because missing data can influence decision making in the end its important to try to fill in these gaps. Depending what is done with the data the method of imputation can differ. Because we didn't know what the end goal of the data was we calculated alot of different statistics on the imputaded data but in the end we settled for 4. Those where RMSE, VE, Kurtosis and Skewness. 
 
