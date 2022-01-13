@@ -100,10 +100,10 @@ HotDeck
 ## Imputing with Hotdeck
 By using the scoreboard for the donors i tested alot of different houses amount of donors to see what works best and confirm if the donors we selected where actaully the best donors. Selecting donors that where supposed to be good and donors who where supossed to bad i tried to confirm that it works. This testing took quite some time because hotdeck was at this stage not as fast as it is now. This was because Albert was still trying to implement vectorisation to speed up the progress.
 
-# Implemented SoftImpute
+## Implemented SoftImpute
 Tried a method called Softimpute from the libray Fancyimpute this method didnt seem to get great results so we dropped in the end for the paper.
 [SoftImpute](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/softimpute.ipynb)
-# Implemented LOCF 
+## Implemented LOCF 
 Last Obervation Carried Forward was a simple imputation method that uses either the data before the gap or behind the gap to fill it in. It gave quite good results on the smaller gaps but failed on bigger gaps.
 [LOCF](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/fillna.ipynb)
 
