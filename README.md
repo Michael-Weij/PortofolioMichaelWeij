@@ -154,32 +154,9 @@ We made a guidline for what method to use based on VE:
 |     Ratio       |     HD             |     HD             |     HD             |     HD             |     HD             |
 |     Interval    |     RNN            |     RNN            |     RNN            |     RNN            |     RNN            |
 
-We chose VE over RMSE because the focal point of the research was to impute the trends back into data.
+We chose VE over RMSE because the focal point of the research was to impute the trends back into data and because RMSE doesnt take time shift in to account we decideded this was best.
 
 
-## Gap creation
-The first gap creation program i wrote
-[Gap creation](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pythoncode/gap.py)
-
-created gaps in the KNMI data so we could run some imputation tests in the beginning. 
-[creating gaps in KNMI data](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pythoncode/creating%20gaps.py)
-
-## Data saving
-I changed the evaluate code so that it was able to save the results it calculated. 
-[evaluate](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/evaluate.ipynb)
-I created a way to save the results from the pipline Adriaan cleaned my code up.
-[Saving](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/saving.ipynb)
-
-HotDeck
-## Imputing with Hotdeck
-By using the scoreboard for the donors i tested alot of different houses amount of donors to see what works best and confirm if the donors we selected where actaully the best donors. Selecting donors that where supposed to be good and donors who where supossed to bad i tried to confirm that it works. This testing took quite some time because hotdeck was at this stage not as fast as it is now. This was because Albert was still trying to implement vectorisation to speed up the progress.
-
-## Implemented SoftImpute
-Tried a method called Softimpute from the libray Fancyimpute this method didnt seem to get great results so we dropped in the end for the paper.
-[SoftImpute](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/softimpute.ipynb)
-## Implemented LOCF 
-Last Obervation Carried Forward was a simple imputation method that uses either the data before the gap or behind the gap to fill it in. It gave quite good results on the smaller gaps but failed on bigger gaps.
-[LOCF](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/fillna.ipynb)
 
 # Domain knowledge
 Read Literature
@@ -199,12 +176,42 @@ In the beginning albert and i started working with the Factory Zero house data a
 Albert made the code to calculate the standard deviation between the time of the next datapoint and gave the following csv file:
 [House Scoreboard](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pythoncode/house_by_overall_std.csv)
 
+## Gap creation
+The first gap creation program i wrote
+[Gap creation](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pythoncode/gap.py)
+
+created gaps in the KNMI data so we could run some imputation tests in the beginning. 
+[creating gaps in KNMI data](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pythoncode/creating%20gaps.py)
+
+## Data saving
+I changed the evaluate code so that it was able to save the results it calculated.\
+[evaluate](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/evaluate.ipynb)\
+With the following code we were able to save the results to csv files and graphs where exported to images. Adriaan cleaned up the code in the end.\
+[Saving](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/saving.ipynb)
+
+## Hotdeck
+In the middle of the minor Albert and I started to work on the method HotDeck this was a patern matching algohritm that looked for a donor with the same trend as the data that was going to be imputed. We did alot of research on Hotdeck and finaly started on implenting Hotdeck to the pipleline. Albert did the coding for it because it was out of my league to code the algorythm that did the patern matching. But we discussed alot on how to improve it. 
+
 For the impution method Hotdeck we needed to find suitable donors. We where using patern matching to look what was the best donor and impute it but if we did this over the 100+ houses it would never finish before the end of the year so we had to preselect a few donors before the patern matching. I wrote a few scoreboards to look which donor to use for  alklimaHeatpump op_mode, smartmeter power and temperature. For the ratio and interval data we used the average that came closest to the data what was going to be imputed. Because op_mode was nominal data we calculated the percentage of how many times each mode was active and looked for similar percentages in the other houses to select the donor.
+
+## Imputing with Hotdeck
+By using the scoreboard for the donors i tested alot of different houses amount of donors to see what works best and confirm if the donors we selected where actaully the best donors. Selecting donors that where supposed to be good and donors who where supossed to bad i tried to confirm that it works. This testing took quite some time because hotdeck was at this stage not as fast as it is now. This was because Albert was still trying to implement vectorisation to speed up the progress.
 
 [Code to see what donors to use for HotDeck](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/scoreboard.ipynb)
 
-# Communication
 
+## Implemented SoftImpute
+Tried a method called Softimpute from the libray Fancyimpute this method didnt seem to get great results so we dropped in the end for the paper.
+[SoftImpute](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/softimpute.ipynb)
+## Implemented LOCF 
+Last Obervation Carried Forward was a simple imputation method that uses either the data before the gap or behind the gap to fill it in. It gave quite good results on the smaller gaps but failed on bigger gaps.
+[LOCF](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/fillna.ipynb)
+
+# Communication
+## Jira
+We used jira to divide the work what was needed to be done. We started with sprints of 2 weeks but later decided that this wasnt long enough and we started doing sprints of around 3  weeks. 
+The progress on the Jira board:
+![Jira Progress](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pdfsandimages/WhatsApp%20Image%202022-01-13%20at%2015.44.42.jpeg)
 ## Paper
 When my other two group members started writing the paper. I was still trying to get resuls from a few imputation methods. After i was done getting results i started to make a LaTex template in Overleaf. In the end i converted the whole paper to LaTex and formatted the whole paper so it could be accepted for the CLIMA 2022 Conference. In the end i didn't write alot in the paper i just ended up reviewing and making corrections to the pieces other people wrote.
 
@@ -218,13 +225,13 @@ Here underneath is the LaTeX code used for the template with the Bibliography. I
 ## Presentations
 
 ### Internal Presentations
-
+[Internal Presentation week 6](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pdfsandimages/Team%20IMP%20-%20Internal%20presentation%20week6.pdf)
 ### External Presentations
-[External Presentation](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Team%20IMP%20-%20external%20presentation%20week6.pdf)
+[External Presentation week 6](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Team%20IMP%20-%20external%20presentation%20week6.pdf)
 ### Learning Lab
 At first i was gonna do the learning lab with Albert about Hotdeck but then we decided it was not that interesting for the other groups. So we decided to delay the learning lab and do it about Hyper Parameter Tuning because it would be more interesting for the other groups. Adriaan explained me some basic concepts about Hyper parameter tuning and send me some literature to read about it. After that we made presentation and notebook together.
 
-
+Both the notebook and presentationw we used for the learning lab\
 [Learning Lab NoteBook](https://github.com/thuas-imp-2021/Learning-Lab/blob/main/genetic-algorithm.ipynb)\
 [Learning Lab Presentation](https://github.com/thuas-imp-2021/Learning-Lab/blob/main/presentation.pdf)
 
