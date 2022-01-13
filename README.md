@@ -220,7 +220,7 @@ Here underneath is the LaTeX code used for the template with the Bibliography. I
 ### Internal Presentations
 
 ### External Presentations
-
+[External Presentation](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Team%20IMP%20-%20external%20presentation%20week6.pdf)
 ### Learning Lab
 At first i was gonna do the learning lab with Albert about Hotdeck but then we decided it was not that interesting for the other groups. So we decided to delay the learning lab and do it about Hyper Parameter Tuning because it would be more interesting for the other groups. Adriaan explained me some basic concepts about Hyper parameter tuning and send me some literature to read about it. After that we made presentation and notebook together.
 
