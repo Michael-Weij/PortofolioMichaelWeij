@@ -117,6 +117,9 @@ read the first part of the book: Part I: The basics
 # Data preprocessing
 In the beginning albert and i started working with the Factory Zero house data and looking for a method to decide which house was the most complete with the least amount of data missing. The method we came up with was calculating the standard deviation over the timestamps and sorting it from there. We found out that house 054 had the least amount of data missing and decided this was the house we are gonna create the gaps in and impute.
 
+Albert made the code to calculate the standard deviation gave the following csv:
+https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pythoncode/house_by_overall_std.csv
+
 For the impution method Hotdeck we needed to find suitable donors. We where using patern matching to look what was the best donor and impute it but if we did this over the 100+ houses it would never finish before the end of the year so we had to preselect a few donors before the patern matching. I wrote a few scoreboards to look which donor to use for  alklimaHeatpump op_mode, smartmeter power and temperature. For the ratio and interval data we used the average that came closest to the data what was going to be imputed. Because op_mode was nominal data we calculated the percentage of how many times each mode was active and looked for similar percentages in the other houses to select the donor.
 
 [Scoreboard used for HotDeck](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/scoreboard.ipynb)
