@@ -262,7 +262,7 @@ Here underneath is the LaTeX code used for the template with the Bibliography. I
 ### Learning Lab
 At first i was gonna do the learning lab with Albert about Hotdeck but then we decided it was not that interesting for the other groups. So we decided to delay the learning lab and do it about Hyper Parameter Tuning because it would be more interesting for the other groups. Adriaan explained me some basic concepts about Hyper parameter tuning and send me some literature to read about it. After that we made presentation and notebook together.
 
-Both the notebook and presentationw we used for the learning lab\
+Both the notebook and presentation we used for the learning lab\
 [Learning Lab NoteBook](https://github.com/thuas-imp-2021/Learning-Lab/blob/main/genetic-algorithm.ipynb)\
 [Learning Lab Presentation](https://github.com/thuas-imp-2021/Learning-Lab/blob/main/presentation.pdf)
 
