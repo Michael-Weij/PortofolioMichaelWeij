@@ -60,8 +60,45 @@
 
 
 ## Reflection and evaluation
-
+First of all some things i have worked on during the project 
 ### Reflection on own contribution to the project
+
+## Sorting the houses
+In the beginning albert and i started working with the Factory Zero house data and looking for a method to decide which house was the most complete with the least amount of data missing. The method we came up with was calculating the standard deviation between the time of the next datapoint.We calculated this for every house and we found out that house 054 had the least amount of data missing and decided this was the house we are gonna create the gaps in and impute.
+
+Albert made the code to calculate the standard deviation between the time of the next datapoint and gave the following csv file\
+[House Scoreboard](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pythoncode/house_by_overall_std.csv)
+
+## Gap creation
+The first gap creation program i wrote\
+[Gap creation](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pythoncode/gap.py)
+
+created gaps in the KNMI data so we could run some imputation tests in the beginning.\
+[creating gaps in KNMI data](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pythoncode/creating%20gaps.py)
+
+## Data saving
+I changed the evaluate code so that it was able to save the results it calculated.\
+[evaluate](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/evaluate.ipynb)\
+With the following code we were able to save the results to csv files and graphs where exported to images. Adriaan cleaned up the code in the end.\
+[Saving](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/saving.ipynb)
+
+## Hotdeck
+In the middle of the minor Albert and I started to work on the method HotDeck this was a patern matching algohritm that looked for a donor with the same trend as the data that was going to be imputed. We did alot of research on Hotdeck and finaly started on implenting Hotdeck to the pipleline. Albert did the coding for it because it was out of my league to code the algorythm that did the patern matching. But we discussed alot on how to improve it. 
+
+For the impution method Hotdeck we needed to find suitable donors. We where using patern matching to look what was the best donor and impute it but if we did this over the 100+ houses it would never finish before the end of the year so we had to preselect a few donors before the patern matching. I wrote a few scoreboards to look which donor to use for  alklimaHeatpump op_mode, smartmeter power and temperature. For the ratio and interval data we used the average that came closest to the data what was going to be imputed. Because op_mode was nominal data we calculated the percentage of how many times each mode was active and looked for similar percentages in the other houses to select the donor.
+
+## Imputing with Hotdeck
+By using the scoreboard for the donors i tested alot of different houses amount of donors to see what works best and confirm if the donors we selected where actaully the best donors. Selecting donors that where supposed to be good and donors who where supossed to bad i tried to confirm that it works. This testing took quite some time because hotdeck was at this stage not as fast as it is now. This was because Albert was still trying to implement vectorisation to speed up the progress.
+
+[Code to see what donors to use for HotDeck](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/scoreboard.ipynb)
+
+## Implemented SoftImpute
+Tried a method called Softimpute from the libray Fancyimpute this method didnt seem to get great results so we dropped in the end for the paper.\
+[SoftImpute](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/softimpute.ipynb)
+## Implemented LOCF 
+Last Obervation Carried Forward was a simple imputation method that uses either the data before the gap or behind the gap to fill it in. It gave quite good results on the smaller gaps but failed on bigger gaps.\
+[LOCF](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/fillna.ipynb)
+
 
 #### Situation
 
@@ -180,42 +217,7 @@ Read Literature:
 [gaining insights into dwelling characteristics using machine learning for policy making on nearly zero-energy buildings with the use of smart meter and weather data](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/article/Gaining_insights_into_dwelling_characteristics_usi.pdf)
 
 [A review of hot deck imputation for survey non-response](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/article/A%20review%20of%20hot%20deck%20imputation%20for%20survey%20non-response.pdf)
-# Predictive Analystics
-In the beginning albert and i started working with the Factory Zero house data and looking for a method to decide which house was the most complete with the least amount of data missing. The method we came up with was calculating the standard deviation between the time of the next datapoint.We calculated this for every house and we found out that house 054 had the least amount of data missing and decided this was the house we are gonna create the gaps in and impute.
 
-Albert made the code to calculate the standard deviation between the time of the next datapoint and gave the following csv file\
-[House Scoreboard](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pythoncode/house_by_overall_std.csv)
-
-## Gap creation
-The first gap creation program i wrote\
-[Gap creation](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pythoncode/gap.py)
-
-created gaps in the KNMI data so we could run some imputation tests in the beginning.\
-[creating gaps in KNMI data](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pythoncode/creating%20gaps.py)
-
-## Data saving
-I changed the evaluate code so that it was able to save the results it calculated.\
-[evaluate](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/evaluate.ipynb)\
-With the following code we were able to save the results to csv files and graphs where exported to images. Adriaan cleaned up the code in the end.\
-[Saving](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/saving.ipynb)
-
-## Hotdeck
-In the middle of the minor Albert and I started to work on the method HotDeck this was a patern matching algohritm that looked for a donor with the same trend as the data that was going to be imputed. We did alot of research on Hotdeck and finaly started on implenting Hotdeck to the pipleline. Albert did the coding for it because it was out of my league to code the algorythm that did the patern matching. But we discussed alot on how to improve it. 
-
-For the impution method Hotdeck we needed to find suitable donors. We where using patern matching to look what was the best donor and impute it but if we did this over the 100+ houses it would never finish before the end of the year so we had to preselect a few donors before the patern matching. I wrote a few scoreboards to look which donor to use for  alklimaHeatpump op_mode, smartmeter power and temperature. For the ratio and interval data we used the average that came closest to the data what was going to be imputed. Because op_mode was nominal data we calculated the percentage of how many times each mode was active and looked for similar percentages in the other houses to select the donor.
-
-## Imputing with Hotdeck
-By using the scoreboard for the donors i tested alot of different houses amount of donors to see what works best and confirm if the donors we selected where actaully the best donors. Selecting donors that where supposed to be good and donors who where supossed to bad i tried to confirm that it works. This testing took quite some time because hotdeck was at this stage not as fast as it is now. This was because Albert was still trying to implement vectorisation to speed up the progress.
-
-[Code to see what donors to use for HotDeck](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/scoreboard.ipynb)
-
-
-## Implemented SoftImpute
-Tried a method called Softimpute from the libray Fancyimpute this method didnt seem to get great results so we dropped in the end for the paper.\
-[SoftImpute](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/softimpute.ipynb)
-## Implemented LOCF 
-Last Obervation Carried Forward was a simple imputation method that uses either the data before the gap or behind the gap to fill it in. It gave quite good results on the smaller gaps but failed on bigger gaps.\
-[LOCF](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/fillna.ipynb)
 
 # Communication
 ## Jira
