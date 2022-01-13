@@ -92,9 +92,19 @@ My tasks changed throughout the minor
 #### Reflection
  
 # Research Project
-Pipeline:
-Gap creation
-Data saving
+
+## Gap creation
+The first gap creation program i wrote
+[Gap creation](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pythoncode/gap.py)
+
+created gaps in the KNMI data so we could run some imputation tests in the beginning. 
+[creating gaps in KNMI data](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pythoncode/creating%20gaps.py)
+
+## Data saving
+I changed the evaluate code so that it was able to save the results it calculated. 
+[evaluate](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/evaluate.ipynb)
+I created a way to save the results from the pipline Adriaan cleaned my code up.
+[Saving](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/saving.ipynb)
 Imputing KNMI Data
 HotDeck
 ## Imputing with Hotdeck
