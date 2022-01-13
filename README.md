@@ -97,10 +97,15 @@ Gap creation
 Data saving
 Imputing KNMI Data
 HotDeck
-Imputing with Hotdeck
-Implemented SoftImpute
-Implemented LOCF 
+## Imputing with Hotdeck
+By using the scoreboard for the donors i tested alot of different houses amount of donors to see what works best and confirm if the donors we selected where actaully the best donors. Selecting donors that where supposed to be good and donors who where supossed to bad i tried to confirm that it works. This testing took quite some time because hotdeck was at this stage not as fast as it is now. This was because Albert was still trying to implement vectorisation to speed up the progress.
 
+# Implemented SoftImpute
+Tried a method called Softimpute from the libray Fancyimpute this method didnt seem to get great results so we dropped in the end for the paper.
+[SoftImpute](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/softimpute.ipynb)
+# Implemented LOCF 
+Last Obervation Carried Forward was a simple imputation method that uses either the data before the gap or behind the gap to fill it in. It gave quite good results on the smaller gaps but failed on bigger gaps.
+[LOCF](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/fillna.ipynb)
 
 # Domain knowledge
 Read Literature
@@ -115,7 +120,7 @@ read the first part of the book: Part I: The basics
 
 
 # Data preprocessing
-In the beginning albert and i started working with the Factory Zero house data and looking for a method to decide which house was the most complete with the least amount of data missing. The method we came up with was calculating the standard deviation between the time of the next datapoint.We did calculated this for every house and we found out that house 054 had the least amount of data missing and decided this was the house we are gonna create the gaps in and impute.
+In the beginning albert and i started working with the Factory Zero house data and looking for a method to decide which house was the most complete with the least amount of data missing. The method we came up with was calculating the standard deviation between the time of the next datapoint.We calculated this for every house and we found out that house 054 had the least amount of data missing and decided this was the house we are gonna create the gaps in and impute.
 
 Albert made the code to calculate the standard deviation between the time of the next datapoint and gave the following csv file:
 [House Scoreboard](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pythoncode/house_by_overall_std.csv)
