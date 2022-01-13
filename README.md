@@ -8,9 +8,13 @@
   - [Datacamp](#datacamp)
   - [Reflection and evaluation](#Reflection-and-evaluation)
 - [Research Project](#research-project)
+  -[Research question and the following three subquestions](Research-question-and-the-following-three-subquestions)
+  -[Future work](Future-work)
+  -[Conclusion](Conclusion)
 - [Domain knowledge](#Domain-knowledge)
-- [Data preprocessing](#Data-preprocessing)
+- [Predictive Analystics](#Predictive-Analystics)
 - [Communication](#Communication)
+  -[Jira](#Jira)  
   - [Paper](#Paper)
   - [Presentations](#Presentations)
  
@@ -159,28 +163,34 @@ We chose VE over RMSE because the focal point of the research was to impute the 
 
 
 # Domain knowledge
-Read Literature
+Read Literature:
+
 [Recurrent Neural Networks for Multivariate Time Series with Missing Values](https://www.nature.com/articles/s41598-018-24271-9)
 
-[Flexible Imputation of missing Data](https://stefvanbuuren.name/fimd//)\
-read the first part of the book: Part I: The basics
+[Flexible Imputation of missing Data](https://stefvanbuuren.name/fimd//)
 
 [Imputation of Clinical covariates in Time Series](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/article/Imputation%20of%20clinical%20covariates%20in%20time%20series.pdf)
 
 [Comparison of different Methods for Univariate Time Series Imputation in R](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/article/Comparison%20of%20different%20Methods%20for%20Univariate%20Time%20Series%20Imputation%20in%20R.pdf)
 
+[Comparison of imputation methods for missing laboratory data in medicine](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/article/Comparison%20of%20imputation%20methods%20for%20missing%20laboratory%20data%20in%20medicine.pdf)
 
-# Data preprocessing
+[Forecasting residential gas consumption with machine learning algorithms on weather data](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/article/Forecastingresidentialgasconsumptionwithmachinelearningalgorithmsonweatherdata05-05-19.pdf)
+
+[gaining insights into dwelling characteristics using machine learning for policy making on nearly zero-energy buildings with the use of smart meter and weather data](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/article/Gaining_insights_into_dwelling_characteristics_usi.pdf)
+
+[A review of hot deck imputation for survey non-response](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/article/A%20review%20of%20hot%20deck%20imputation%20for%20survey%20non-response.pdf)
+# Predictive Analystics
 In the beginning albert and i started working with the Factory Zero house data and looking for a method to decide which house was the most complete with the least amount of data missing. The method we came up with was calculating the standard deviation between the time of the next datapoint.We calculated this for every house and we found out that house 054 had the least amount of data missing and decided this was the house we are gonna create the gaps in and impute.
 
-Albert made the code to calculate the standard deviation between the time of the next datapoint and gave the following csv file:
+Albert made the code to calculate the standard deviation between the time of the next datapoint and gave the following csv file\
 [House Scoreboard](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pythoncode/house_by_overall_std.csv)
 
 ## Gap creation
-The first gap creation program i wrote
+The first gap creation program i wrote\
 [Gap creation](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pythoncode/gap.py)
 
-created gaps in the KNMI data so we could run some imputation tests in the beginning. 
+created gaps in the KNMI data so we could run some imputation tests in the beginning.\
 [creating gaps in KNMI data](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/pythoncode/creating%20gaps.py)
 
 ## Data saving
@@ -201,10 +211,10 @@ By using the scoreboard for the donors i tested alot of different houses amount 
 
 
 ## Implemented SoftImpute
-Tried a method called Softimpute from the libray Fancyimpute this method didnt seem to get great results so we dropped in the end for the paper.
+Tried a method called Softimpute from the libray Fancyimpute this method didnt seem to get great results so we dropped in the end for the paper.\
 [SoftImpute](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/softimpute.ipynb)
 ## Implemented LOCF 
-Last Obervation Carried Forward was a simple imputation method that uses either the data before the gap or behind the gap to fill it in. It gave quite good results on the smaller gaps but failed on bigger gaps.
+Last Obervation Carried Forward was a simple imputation method that uses either the data before the gap or behind the gap to fill it in. It gave quite good results on the smaller gaps but failed on bigger gaps.\
 [LOCF](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/fillna.ipynb)
 
 # Communication
