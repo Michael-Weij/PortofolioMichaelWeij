@@ -13,7 +13,7 @@
 - [Communication](#Communication)
   - [Paper](#Paper)
   - [Presentations](#Presentations)
-
+ 
 
 # Obligatory Criteria
 
@@ -92,18 +92,69 @@
 #### Reflection
  
 # Research Project
-The project was about imputating missing data in building management systems. Because missing data can influence decision making in the end its important to try to fill in these gaps. 
+The project was about imputating missing data in building management systems. Because missing data can influence decision making in the end its important to try to fill in these gaps. Depending what is done with the data the method of imputation can differ. Because we didn't know what the end goal of the data was we calculated alot of different statistics on the imputaded data but in the end we settled for 4. Those where RMSE, VE, Kurtosis and Skewness. 
+
+The data that we used for the project existed out of building management system data of hundred-twenty residential Net-Zero energy houses and data of twenty-five weather stations from the Royal Netherlands Meteorological Institute (KNMI).
 
 
+|     Column   name       |     Dataset    |     Device               |     Unit of measurement    |     Measurement scale    |
+|-------------------------|----------------|--------------------------|----------------------------|--------------------------|
+|     Temperature         |     KNMI       |     -                    |     C (in 0.1c)            |     Interval             |
+|     Global Radiation    |     KNMI       |     -                    |     j per cm²              |     Ratio                |
+|     Humidity            |     KNMI       |     -                    |     %                      |     Ratio                |
+|     Flow_temp           |     BMS        |     Alklima Heat Pump    |     C                      |     Interval             |
+|     op_mode             |     BMS        |     Alklima Heat Pump    |     0-6 modes              |     Nominal              |
+|     Power               |     BMS        |     Smartmeter           |     W                      |     Ratio                |
+|     C02                 |     BMS        |     C02 Sensor           |     PPM                    |     Ratio                |
 
-Research Questions
-main
+
+We created a pipeline to make it easier for us to evaluate the imputation methods on the same conditions. The pipeline handled the following tasks: creating gaps, imputing the artificial gaps, calculating imputation performance, and storing the evaluation results.
+
+
+The artificial gap sizes we created for the building management system data:
+|     Nr.    |     Min_size    |     Max_size     |     % Of   data    |
+|------------|-----------------|------------------|--------------------|
+|     1      |     5 min       |     60 min       |     15             |
+|     2      |     1 hour      |     6 hours      |     4              |
+|     3      |     6 hours     |     24 hours     |     1.5            |
+|     4      |     24 hours    |     72 hours     |     0.5            |
+|     5      |     72 hours    |     168 hours    |     0.01           |
+
+
+## Research question and the following three subquestions
 - Which imputation techniques should be applied for data imputation in building energy time series data?
-3 sub questions
   - What imputation methods are known for imputing time series data?
   - Which imputation techniques are best suited for what gap sizes?
   - What imputation techniques are best suited for which types of data?
 
+
+## Future work
+To build upon this research its important that the evaluated data should be less tested on metrics based on error but forecasting using the imputed data. This way its easier to see what effect the imputed data have on the end value and can make it easier to decide why to take a specific imputation method over the other. 
+
+In this data set we only had numerical data and no ordinal data. To get the full vieuw of what imputation method to use for what type of data furthet research is required.
+
+
+## Conclusion
+To answer the first subquestion we read alot of literature on data imputation. After alot of testing we decided to use the following methods:
+
+|     Method                              |     Abbreviation    |     Category          |     Description                                                    |     Library used                 |
+|-----------------------------------------|---------------------|-----------------------|--------------------------------------------------------------------|----------------------------------|
+|     Last Observation Carried Forward    |     LOCF            |     Simple            |     Use the last cell before the gap to fill a gap.              |     pandas.DataFrame.fillna      |
+|     KNN regression                      |     KNN             |     Simple            |     Take the weighted average K-number of nearest neighbours.    |     sklearn.impute.KNNImputer    |
+|     GRU RNN                             |     RNN             |     Neural Network    |     RNN   considers past values to impute missing data.            |     torch.nn.GRU                 |
+|     Hot deck                            |     HD              |     Statistical       |     Take data from a different unit with a similar trend.        |     None                         |
+
+
+From the results of both VE and RMSE can be concluded that there is no single best imputation method for all gap sizes and measurement scales. The best method for a gap size is dependent on the measurement scale of the to be imputed data.
+
+We made a guidline for what method to use based on VE:
+|                 |     Gap type 1.    |     Gap type 2.    |     Gap type 3.    |     Gap type 4.    |     Gap type 5.    |
+|-----------------|--------------------|--------------------|--------------------|--------------------|--------------------|
+|     Nominal     |     HD             |     HD             |     HD             |     HD             |     HD             |
+|     Ratio       |     HD             |     HD             |     HD             |     HD             |     HD             |
+|     Interval    |     RNN            |     RNN            |     RNN            |     RNN            |     RNN            |
+
+We chose VE over RMSE because the focal point of the research was to impute the trends back into data.
 
 
 ## Gap creation
