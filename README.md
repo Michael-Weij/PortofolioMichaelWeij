@@ -1,6 +1,6 @@
 # Portfolio for the Minor Applied Data Science
-### Michael Weij
-### 18095593
+### Student: Michael Weij
+### Studentnumber: 18095593
 
 
 ## Index
