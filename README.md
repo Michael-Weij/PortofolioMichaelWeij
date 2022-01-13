@@ -62,7 +62,7 @@
 #### Situation
 
 #### Task
-My tasks changed throughout the minor
+
 #### Action
 
 #### Results
@@ -92,6 +92,19 @@ My tasks changed throughout the minor
 #### Reflection
  
 # Research Project
+The project was about imputating missing data in building management systems. Because missing data can influence decision making in the end its important to try to fill in these gaps. 
+
+
+
+Research Questions
+main
+- Which imputation techniques should be applied for data imputation in building energy time series data?
+3 sub questions
+  - What imputation methods are known for imputing time series data?
+  - Which imputation techniques are best suited for what gap sizes?
+  - What imputation techniques are best suited for which types of data?
+
+
 
 ## Gap creation
 The first gap creation program i wrote
@@ -105,7 +118,7 @@ I changed the evaluate code so that it was able to save the results it calculate
 [evaluate](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/evaluate.ipynb)
 I created a way to save the results from the pipline Adriaan cleaned my code up.
 [Saving](https://github.com/Michael-Weij/PortofolioTHUAS/blob/main/code/Notebooks/saving.ipynb)
-Imputing KNMI Data
+
 HotDeck
 ## Imputing with Hotdeck
 By using the scoreboard for the donors i tested alot of different houses amount of donors to see what works best and confirm if the donors we selected where actaully the best donors. Selecting donors that where supposed to be good and donors who where supossed to bad i tried to confirm that it works. This testing took quite some time because hotdeck was at this stage not as fast as it is now. This was because Albert was still trying to implement vectorisation to speed up the progress.
@@ -158,7 +171,7 @@ Here underneath is the LaTeX code used for the template with the Bibliography. I
 ### External Presentations
 
 ### Learning Lab
-At first i was gonna do the learning lab with Albert about Hotdeck but then we decided it was not that interesting for the other groups. So we decided to delay the learning lab and do it about Hyper Parmeter Tuning because it would be more interesting for the other groups. 
+At first i was gonna do the learning lab with Albert about Hotdeck but then we decided it was not that interesting for the other groups. So we decided to delay the learning lab and do it about Hyper Parameter Tuning because it would be more interesting for the other groups. Adriaan explained me some basic concepts about Hyper parameter tuning and send me some literature to read about it. After that we made presentation and notebook together.
 
 
 [Learning Lab NoteBook](https://github.com/thuas-imp-2021/Learning-Lab/blob/main/genetic-algorithm.ipynb)\
